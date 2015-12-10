@@ -1,1 +1,83 @@
-<html>
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>Font example</title>
+  <link rel="canonical" href="amps.html" >
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-custom>
+    @font-face {
+      font-family: 'Comic AMP';
+      font-style: normal;
+      font-weight: 400;
+      src: url(fonts/ComicAMP.ttf) format('truetype');
+    }
+    @font-face {
+      font-family: 'Comic AMP Bold';
+      font-style: bold;
+      font-weight: 600;
+      src: url(fonts/ComicAMPBold.ttf) format('truetype');
+    }
+    .comic-amp-font-loaded {
+      font-family: 'Comic AMP', serif, sans-serif;
+    }
+    .comic-amp-bold-font-loaded .comic-amp-bold {
+      font-family: 'Comic AMP Bold', serif, sans-serif;
+      color: #000;
+    }
+    body {
+        background-color: white;
+    }
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 20px;
+      font-weight: normal;
+    }
+    .comic-amp-font-loading {
+      color: #00f;
+    }
+    .comic-amp-bold-font-loading .comic-amp-bold {
+      color: #0ff;
+    }
+    .comic-amp-font-missing,
+    .comic-amp-bold-font-missing .comic-amp-bold {
+      color: #f00;
+    }
+  </style>
+  <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
+  <style>body {opacity: 0}</style><noscript><style>body {opacity: 1}</style></noscript>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+</head>
+<body class="comic-amp-font-loading comic-amp-bold-font-loading">
+
+  <h1> Lorem Ipsum </h1>
+
+  <p>
+      Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum Some text lorem ipsum 
+      <amp-img src="http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg?1399003306" width=300 height=300></amp-img>
+  </p>
+  
+  <amp-font
+    layout="nodisplay"
+    font-family="Comic AMP"
+    timeout="2000"
+    on-error-remove-class="comic-amp-font-loading"
+    on-error-add-class="comic-amp-font-missing"
+    on-load-remove-class="comic-amp-font-loading"
+    on-load-add-class="comic-amp-font-loaded">
+  </amp-font>
+  <amp-font
+    layout="nodisplay"
+    font-family="Comic AMP Bold"
+    timeout="3000"
+    font-weight="bold"
+    on-error-remove-class="comic-amp-bold-font-loading"
+    on-error-add-class="comic-amp-bold-font-missing"
+    on-load-remove-class="comic-amp-bold-font-loading"
+    on-load-add-class="comic-amp-bold-font-loaded">
+  </amp-font>
+</body>
+</html>
